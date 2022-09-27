@@ -69,4 +69,22 @@ fun main() {
     // 2 fokú létra: 2, 1+1=2, tehát 2 db
     // 3 fokú: 1+2, 2+1, 1+1+1, 3 db
 
+    //Lényegében a feladat a fibonacci számoknak egy változata, csak azzal a különbséggel,
+    //hogy a létrafokok számához hozzá kell adni egyet, hogy megkapjuk a megfelelő fibonacci sort.
+    //Ezután pedig rekurzívan meghívva a függvényt el tudunk jutni a fibonacci sor legelejéig.
+    fun fibonacci(n: Int) : Int {
+        if (n <= 1) {
+            return n
+        }
+
+        return fibonacci(n - 1) + fibonacci(n - 2)
+    }
+
+    fun numberOfWays(s: Int) : Int{
+        return fibonacci(s + 1)
+    }
+
+    val numberOfStairs = 5
+    println("Number of ways to climb the stairs: ${numberOfWays(numberOfStairs)}")
+
 }
